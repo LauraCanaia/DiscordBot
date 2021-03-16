@@ -1,5 +1,9 @@
 import discord
 import random
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
 
 class MyClient(discord.Client):
     async def on_ready(self):
@@ -10,4 +14,4 @@ class MyClient(discord.Client):
     		await message.channel.send("YO")
 
 client = MyClient()
-client.run('ODIxMzI1NzMyMDg0MTg3MTc2.YFCFMg.dtKCQmVF-2P8NRLZueoDWjSWoZE')
+client.run(os.environ.get("KEY"))
